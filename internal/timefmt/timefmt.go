@@ -132,7 +132,7 @@ func orderedFormats(query string) []spec {
 func formatOrder(query string) []string {
 	switch inputKind(strings.TrimSpace(query)) {
 	case kindUnix:
-		return []string{"datetime", "date", "time", "iso", "unix", "unixms"}
+		return []string{"date", "datetime", "time", "iso", "unix", "unixms"}
 	case kindDate:
 		return []string{"unix", "unixms", "datetime", "date", "time", "iso"}
 	default:
