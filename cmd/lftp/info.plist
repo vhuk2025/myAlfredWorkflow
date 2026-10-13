@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.soul.alfred.lftp</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>B1E2F3A4-0001-4E00-9000-000000000001</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B1E2F3A4-0001-4E00-9000-000000000002</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B1E2F3A4-0001-4E00-9000-000000000002</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B1E2F3A4-0001-4E00-9000-000000000003</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>soul</string>
+	<key>description</key>
+	<string>输入 lftp 列出 bookmark 别名，回车在终端中打开。</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>LFTP</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>lftp</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>读取 bookmark…</string>
+				<key>script</key>
+				<string>./lftp filter "$@"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>列出 lftp bookmark，回车在终端打开</string>
+				<key>title</key>
+				<string>打开 LFTP bookmark</string>
+				<key>type</key>
+				<integer>5</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>B1E2F3A4-0001-4E00-9000-000000000001</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./lftp open "$@"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B1E2F3A4-0001-4E00-9000-000000000002</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>LFTP</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>B1E2F3A4-0001-4E00-9000-000000000003</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>在 Alfred 中输入 lftp，列出 lftp bookmark 别名。
+别名来自 `lftp -c "bookmark list"`，不会直接读取 bookmarks 文件。
+回车后在终端执行 lftp &lt;别名&gt;。Ghostty 已打开时在当前窗口新建标签页。
+
+lftp
+lftp agent-pre
+
+Workflow 配置项：
+- lftp_terminal：运行 lftp 的终端应用，Terminal（默认）、iTerm2 或 Ghostty</string>
+	<key>uidata</key>
+	<dict>
+		<key>B1E2F3A4-0001-4E00-9000-000000000001</key>
+		<dict>
+			<key>xpos</key>
+			<real>80</real>
+			<key>ypos</key>
+			<real>80</real>
+		</dict>
+		<key>B1E2F3A4-0001-4E00-9000-000000000002</key>
+		<dict>
+			<key>xpos</key>
+			<real>420</real>
+			<key>ypos</key>
+			<real>80</real>
+		</dict>
+		<key>B1E2F3A4-0001-4E00-9000-000000000003</key>
+		<dict>
+			<key>xpos</key>
+			<real>700</real>
+			<key>ypos</key>
+			<real>80</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>Terminal</string>
+				<key>placeholder</key>
+				<string>Terminal</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>运行 lftp 的终端应用：Terminal、iTerm2 或 Ghostty。</string>
+			<key>name</key>
+			<string>终端应用</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>lftp_terminal</string>
+		</dict>
+	</array>
+	<key>version</key>
+	<string>1.0.3</string>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

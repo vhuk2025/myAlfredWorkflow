@@ -12,6 +12,15 @@
 - `tt 2025-02-02 05:04:05`
 - `tt 1738454400`
 
+## 打开 lftp bookmark `lftp`
+
+在 Alfred 里输入 `lftp` 列出 bookmark 别名，回车在终端中执行 `lftp <别名>`。别名来自 `lftp -c "bookmark list"`，不会直接读取 bookmarks 文件。
+
+- `lftp`
+- `lftp agent-pre`
+
+Workflow 配置里的「终端应用」可填 `Terminal`、`iTerm2` 或 `Ghostty`。Ghostty 已打开时在当前窗口新建标签页，否则开新窗口。
+
 ## 格式化 JSON `json`
 
 复制一段 JSON 后，在 Alfred 里输入 `json`。workflow 通过 Alfred 的 `{clipboard}` 读取剪贴板，在程序里格式化，再用编辑器打开。内容为空或不是合法 JSON 时会弹出警告。
@@ -26,6 +35,7 @@ make package
 make import
 make import WORKFLOW=tt
 make import WORKFLOW=json
+make import WORKFLOW=lftp
 ```
 
 `make import` 会用 Alfred 5 打开打包文件，确认导入即可。已存在相同 bundle id（`com.soul.alfred.tt`）时会提示更新。
